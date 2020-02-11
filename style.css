@@ -1,7 +1,11 @@
 body {
-    background: rgb(245, 245, 245);
+    background: rgb(255, 255, 255);
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
 }
 
+/* Navbar Styling */
 .navbar {
     width: 100%;
     height: 50px;
@@ -155,6 +159,112 @@ body {
 }
 
 
+/* Slideshow Styling */
+.slide {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.slide > * {
+    position: relative;
+    top: 40px;
+}
+
+.slide .h1 {
+    position: relative;
+    width: 200px;
+    height: 70px;
+}
+
+.slide .h1 h1:nth-child(2) {
+    opacity: 1;
+    left: 0;
+}
+
+.slide .h1:after {
+    content: "";
+    width: 80%;
+    height: 3px;
+    background: black;
+    position: absolute;
+    bottom: 3px;
+    left: 10%;
+}
+
+.slide h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    position: absolute;
+    width: 100%;
+    line-height: 80px;
+    text-align: center;
+    vertical-align: center;
+    opacity: 0;
+    left: 50px;
+    transition: opacity .3s ease, left .5s ease;
+}
+
+.slide h3 {
+    font-size: 25px;
+    margin-bottom: -5px;
+}
+
+.slide a {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.slide .cars {
+    width: 300%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+}
+
+.slide .cars-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    left: 0;
+    transition: left .5s ease;
+}
+
+.slide .cars img {
+    cursor: pointer;
+    width: 30%;
+}
+
+.slide .dots {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.slide .dots .dot {
+    border: solid #cccccc 2px;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    background: none;
+    margin: 0 8px 0 8px;
+    cursor: pointer;
+}
+
+.slide .dot.two {
+    background: #cccccc;
+}
+
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 
@@ -163,7 +273,31 @@ body {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    .slide > * {
+        top: -30px;
+    }
 
+    .slide .h1 {
+        width: 250px;
+        height: 80px;
+    }
+
+    .slide h1 {
+        font-size: 60px;
+    }
+
+    .slide h3 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .slide a {
+        font-size: 20px;
+    }
+
+    .slide .cars {
+        margin-top: 0;
+    }
 }
 
 
@@ -171,6 +305,14 @@ body {
 @media (min-width: 992px) {
     .navbar .links {
         width: 40%;
+    }
+
+    .slide .cars {
+        width: 3440px;
+    }
+
+    .slide .cars img {
+        width: 959px;
     }
 }
 
